@@ -9,13 +9,12 @@
     <artifactId>JiraPluginsDev</artifactId>
     <version>4</version>
 
+    <description>Parches de Jira</description>
     <organization>
-        <name>Example Company</name>
-        <url>http://www.example.com/</url>
+        <name>Wolters Kluwer</name>
+        <url>http://www.wke.es/</url>
     </organization>
-
-    <name>JiraPluginsDev</name>
-    <description>This is the com.dc.jira:JiraPluginsDev plugin for Atlassian JIRA.</description>
+    <name>ParchesJira</name>
     <packaging>atlassian-plugin</packaging>
 
     <dependencies>
