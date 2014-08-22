@@ -20,5 +20,10 @@
 
         <context>JiraPluginsDev</context>
     </web-resource>
+    <!-- EDITOR DE EVENTOS -->
+    <component-import key="EditorEventos" interface="com.atlassian.event.api.EventPublisher"/>
+    <component key="Listener" class="com.dc.jira.ProcesarEdicion">
+        <description>Clase que perrmite controlar los eventos de JIRA.</description>
+    </component>
 
 </atlassian-plugin>
