@@ -1,1 +1,5 @@
-Logs the message '$messageField'
+<i><b>Wolters Kluwer.</b></i><br/>
+Establecimiento de usuario administrador con permisos de edicion sobre ARQ para poder realizar la operaci�n de edici�n.<br/>
+Asigna en el campo Other Users Interested el usuario backup de arquitectura para que est� informado.<br/>
+
+&nbsp;&nbsp;-&nbsp;Usuario administrador seleccionado: &nbsp;&nbsp;<b>$userAdmin</b>
