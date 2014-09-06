@@ -33,4 +33,14 @@
     <resource type="velocity" name="input-parameters" location="templates/postfunctions/arq-asignacion-otros-usuarios-input.vm"/>
     <resource type="velocity" name="edit-parameters" location="templates/postfunctions/arq-asignacion-otros-usuarios-input.vm"/>
   </workflow-function>
+  <workflow-function key="cec-asignacion-especialista" name="CEC Asignacion Especialista" i18n-name-key="cec-asignacion-especialista.name" class="com.dc.jira.jira.workflow.CECAsignacionEspecialistaFactory">
+    <description key="cec-asignacion-especialista.description">The CEC Asignacion Especialista Plugin</description>
+    <function-class>com.dc.jira.jira.workflow.CECAsignacionEspecialista</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/cec-asignacion-especialista.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/cec-asignacion-especialista-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/cec-asignacion-especialista-input.vm"/>
+  </workflow-function>
 </atlassian-plugin>
