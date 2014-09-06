@@ -1,8 +1,22 @@
-<tr>
-    <td class="fieldLabelArea">
-        Message:
-    </td>
-    <td nowrap>
-        <input name="messageField" id="messageField" value="$messageField" />
-    </td>
-</tr>
+Post function que asigna el especialista que va a resolver la consulta. Se establece en funci�n del campo Materia - Especialista.
+<table class="aui">
+	<tr>
+    	<td>
+        	Usuario administrador con permisos de edici�n sobre el proyecto CE :
+    	</td>
+    	<td>
+    		&nbsp;&nbsp;&nbsp;&nbsp
+        	<select name="userAdmin">
+				#foreach ($user in $allUsers)
+					<option value="$user.name" 
+					#if($!userAdmin && $user.name == $userAdmin)  
+						selected="selected"
+					#end>$user.name</option>
+				#end
+			</select>
+    	</td>
+    	<td width=40%>
+    	  &nbsp;&nbsp;&nbsp;&nbsp
+    	</td>
+	</tr>
+</table>

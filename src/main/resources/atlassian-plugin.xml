@@ -1,46 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
-  <plugin-info>
-    <description>${project.description}</description>
-    <version>${project.version}</version>
-    <vendor name="${project.organization.name}" url="${project.organization.url}"/>
-    <param name="plugin-icon">images/WK min.png</param>
-    <param name="plugin-logo">images/WK max.png</param>
-  </plugin-info>
-  <!-- add our i18n resource -->
-  <resource type="i18n" name="i18n" location="JiraPluginsDev"/>
-  <!-- add our web resources -->
-  <web-resource key="JiraPluginsDev-resources" name="JiraPluginsDev Web Resources">
-    <dependency>com.atlassian.auiplugin:ajs</dependency>
-    <resource type="download" name="JiraPluginsDev.css" location="/css/JiraPluginsDev.css"/>
-    <resource type="download" name="JiraPluginsDev.js" location="/js/JiraPluginsDev.js"/>
-    <resource type="download" name="images/" location="/images"/>
-    <context>JiraPluginsDev</context>
-  </web-resource>
-  <!-- EDITOR DE EVENTOS -->
-  <component-import key="EditorEventos" interface="com.atlassian.event.api.EventPublisher"/>
-  <component key="Listener" class="com.dc.jira.ProcesarEdicion">
-    <description>Clase que perrmite controlar los eventos de JIRA.</description>
-  </component>
-  <workflow-function key="arq-asignacion-otros-usuarios" name="ARQ Asignacion Otros Usuarios" i18n-name-key="arq-asignacion-otros-usuarios.name" class="com.dc.jira.jira.workflow.ARQAsignacionOtrosUsuariosFactory">
-    <description key="arq-asignacion-otros-usuarios.description">The ARQ Asignacion Otros Usuarios Plugin</description>
-    <function-class>com.dc.jira.jira.workflow.ARQAsignacionOtrosUsuarios</function-class>
-    <orderable>true</orderable>
-    <unique>true</unique>
-    <deletable>true</deletable>
-    <resource type="velocity" name="view" location="templates/postfunctions/arq-asignacion-otros-usuarios.vm"/>
-    <resource type="velocity" name="input-parameters" location="templates/postfunctions/arq-asignacion-otros-usuarios-input.vm"/>
-    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/arq-asignacion-otros-usuarios-input.vm"/>
-  </workflow-function>
-  <workflow-function key="cec-asignacion-especialista" name="CEC Asignacion Especialista" i18n-name-key="cec-asignacion-especialista.name" class="com.dc.jira.jira.workflow.CECAsignacionEspecialistaFactory">
-    <description key="cec-asignacion-especialista.description">The CEC Asignacion Especialista Plugin</description>
-    <function-class>com.dc.jira.jira.workflow.CECAsignacionEspecialista</function-class>
-    <orderable>true</orderable>
-    <unique>true</unique>
-    <deletable>true</deletable>
-    <resource type="velocity" name="view" location="templates/postfunctions/cec-asignacion-especialista.vm"/>
-    <resource type="velocity" name="input-parameters" location="templates/postfunctions/cec-asignacion-especialista-input.vm"/>
-    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/cec-asignacion-especialista-input.vm"/>
-  </workflow-function>
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+        <param name="plugin-icon">images/WK min.png</param>
+        <param name="plugin-logo">images/WK max.png</param>
+    </plugin-info>
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="JiraPluginsDev"/>
+    <!-- add our web resources -->
+    <web-resource key="JiraPluginsDev-resources" name="JiraPluginsDev Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        <resource type="download" name="JiraPluginsDev.css" location="/css/JiraPluginsDev.css"/>
+        <resource type="download" name="JiraPluginsDev.js" location="/js/JiraPluginsDev.js"/>
+        <resource type="download" name="images/" location="/images"/>
+        <context>JiraPluginsDev</context>
+    </web-resource>
+    <!-- EDITOR DE EVENTOS -->
+    <component-import key="EditorEventos" interface="com.atlassian.event.api.EventPublisher"/>
+    <component key="Listener" class="com.dc.jira.ProcesarEdicion">
+        <description>Clase que perrmite controlar los eventos de JIRA.</description>
+    </component>
+    <workflow-function key="arq-asignacion-otros-usuarios" name="ARQ Asignacion Otros Usuarios"
+                       i18n-name-key="arq-asignacion-otros-usuarios.name"
+                       class="com.dc.jira.jira.workflow.ARQAsignacionOtrosUsuariosFactory">
+        <description key="arq-asignacion-otros-usuarios.description">The ARQ Asignacion Otros Usuarios Plugin
+        </description>
+        <function-class>com.dc.jira.jira.workflow.ARQAsignacionOtrosUsuarios</function-class>
+        <orderable>true</orderable>
+        <unique>true</unique>
+        <deletable>true</deletable>
+        <resource type="velocity" name="view" location="templates/postfunctions/arq-asignacion-otros-usuarios.vm"/>
+        <resource type="velocity" name="input-parameters"
+                  location="templates/postfunctions/arq-asignacion-otros-usuarios-input.vm"/>
+        <resource type="velocity" name="edit-parameters"
+                  location="templates/postfunctions/arq-asignacion-otros-usuarios-input.vm"/>
+    </workflow-function>
+    <workflow-function key="cec-asignacion-especialista" name="CEC Asignacion Especialista"
+                       i18n-name-key="cec-asignacion-especialista.name"
+                       class="com.dc.jira.jira.workflow.CECAsignacionEspecialistaFactory">
+        <description key="cec-asignacion-especialista.description">Plugin CEC Asignacion Especialista</description>
+        <function-class>com.dc.jira.jira.workflow.CECAsignacionEspecialista</function-class>
+        <orderable>true</orderable>
+        <unique>true</unique>
+        <deletable>true</deletable>
+        <resource type="velocity" name="view" location="templates/postfunctions/cec-asignacion-especialista.vm"/>
+        <resource type="velocity" name="input-parameters"
+                  location="templates/postfunctions/cec-asignacion-especialista-input.vm"/>
+        <resource type="velocity" name="edit-parameters"
+                  location="templates/postfunctions/cec-asignacion-especialista-input.vm"/>
+    </workflow-function>
 </atlassian-plugin>
