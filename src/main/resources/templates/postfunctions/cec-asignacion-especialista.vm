@@ -1,5 +1,5 @@
 <i><b>Wolters Kluwer.</b></i><br/>
-Establecimiento de usuario administrador con permisos de edicion sobre CE para poder realizar la operaci�n de edici�n.<br/>
-Asigna el especialista que va a resolver la consulta. Se establece en funci�n del campo Materia - Especialista.<br/>
+Establecimiento de usuario administrador con permisos de edicion sobre CE para poder realizar la operacion de edicion.<br/>
+Asigna el especialista que va a resolver la consulta. Se establece en funcion del campo Materia - Especialista.<br/>
 
 &nbsp;&nbsp;-&nbsp;Usuario administrador seleccionado: &nbsp;&nbsp;<b>$userAdmin</b>
