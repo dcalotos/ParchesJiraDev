@@ -64,7 +64,7 @@
     <resource type="velocity" name="edit-parameters" location="templates/postfunctions/cec-completar-datos-phoenix-input.vm"/>
   </workflow-function>
   <workflow-function key="cec-exportar-consultas" name="CEC Exportar Consultas" i18n-name-key="cec-exportar-consultas.name" class="com.dc.jira.jira.workflow.CECExportarConsultasFactory">
-    <description key="cec-exportar-consultas.description">The CEC Exportar Consultas Plugin</description>
+    <description key="cec-exportar-consultas.description">Plugin CEC Exportar Consultas</description>
     <function-class>com.dc.jira.jira.workflow.CECExportarConsultas</function-class>
     <orderable>true</orderable>
     <unique>true</unique>
