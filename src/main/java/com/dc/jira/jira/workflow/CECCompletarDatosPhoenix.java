@@ -92,10 +92,10 @@ public class CECCompletarDatosPhoenix extends AbstractJiraFunctionProvider {
 				 * mutableIssue.setCustomFieldValue(ambito, ambitoOption); }
 				 */
                 CustomField TelefonoCF = ComponentAccessor.getCustomFieldManager().getCustomFieldObjectByName(
-                        "Tel�fono");
+                        "Tel\u00e9fono");
                 mutableIssue.setCustomFieldValue(TelefonoCF, Telefono);
                 CustomField CodPostalCF = ComponentAccessor.getCustomFieldManager().getCustomFieldObjectByName(
-                        "C�digo Postal");
+                        "C\u00f3digo Postal");
                 mutableIssue.setCustomFieldValue(CodPostalCF, CodPostal);
                 CustomField ProvinciaCF = ComponentAccessor.getCustomFieldManager().getCustomFieldObjectByName(
                         "Provincia");
@@ -109,7 +109,7 @@ public class CECCompletarDatosPhoenix extends AbstractJiraFunctionProvider {
                         "Valor de cartera");
                 mutableIssue.setCustomFieldValue(VCCCF, VCC);
                 CustomField HabitantesCF = ComponentAccessor.getCustomFieldManager().getCustomFieldObjectByName(
-                        "N�mero de habitantes poblaci�n");
+                        "N\u00famero de habitantes poblaci\u00f3n");
                 mutableIssue.setCustomFieldValue(HabitantesCF, Habitantes);
 
                 IssueIndexManager issueIndexManager = ComponentAccessor.getIssueIndexManager();

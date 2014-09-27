@@ -46,7 +46,7 @@ public class CECAsignacionEspecialista extends AbstractJiraFunctionProvider {
 
         IssueManager issueManager = ComponentAccessor.getIssueManager();
 
-        log.warn("Asignaci�n especialista");
+        log.warn("Asignaci\u00f3n especialista");
         CustomFieldManager customFieldManager = ComponentAccessor.getCustomFieldManager();
         materiaEspecialista = customFieldManager.getCustomFieldObjectByName("Materia - Especialista").getValue(issue)
                 .toString();
@@ -58,7 +58,7 @@ public class CECAsignacionEspecialista extends AbstractJiraFunctionProvider {
                     materiaEspecialista.indexOf("}"));
             responsable = especialista.substring(especialista.indexOf("(") + 1, especialista.length() - 1);
         }
-        log.warn("Asignaci�n especialista [" + responsable + "].");
+        log.warn("Asignaci\u00f3n especialista [" + responsable + "].");
 
         issue.setAssignee(UserUtils.getUser(responsable));
 

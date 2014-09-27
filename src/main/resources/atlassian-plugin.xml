@@ -1,83 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <atlassian-plugin key="${project.groupId}.${project.artifactId}" name="${project.name}" plugins-version="2">
-    <plugin-info>
-        <description>${project.description}</description>
-        <version>${project.version}</version>
-        <vendor name="${project.organization.name}" url="${project.organization.url}"/>
-        <param name="plugin-icon">images/WK min.png</param>
-        <param name="plugin-logo">images/WK max.png</param>
-    </plugin-info>
-    <!-- add our i18n resource -->
-    <resource type="i18n" name="i18n" location="JiraPluginsDev"/>
-    <!-- add our web resources -->
-    <web-resource key="JiraPluginsDev-resources" name="JiraPluginsDev Web Resources">
-        <dependency>com.atlassian.auiplugin:ajs</dependency>
-        <resource type="download" name="JiraPluginsDev.css" location="/css/JiraPluginsDev.css"/>
-        <resource type="download" name="JiraPluginsDev.js" location="/js/JiraPluginsDev.js"/>
-        <resource type="download" name="images/" location="/images"/>
-        <context>JiraPluginsDev</context>
-    </web-resource>
-    <!-- EDITOR DE EVENTOS -->
-    <component-import key="EditorEventos" interface="com.atlassian.event.api.EventPublisher"/>
-    <component key="Listener" class="com.dc.jira.ProcesarEdicion">
-        <description>Clase que perrmite controlar los eventos de JIRA.</description>
-    </component>
-    <workflow-function key="arq-asignacion-otros-usuarios" name="ARQ Asignacion Otros Usuarios"
-                       i18n-name-key="arq-asignacion-otros-usuarios.name"
-                       class="com.dc.jira.jira.workflow.ARQAsignacionOtrosUsuariosFactory">
-        <description key="arq-asignacion-otros-usuarios.description">The ARQ Asignacion Otros Usuarios Plugin
-        </description>
-        <function-class>com.dc.jira.jira.workflow.ARQAsignacionOtrosUsuarios</function-class>
-        <orderable>true</orderable>
-        <unique>true</unique>
-        <deletable>true</deletable>
-        <resource type="velocity" name="view" location="templates/postfunctions/arq-asignacion-otros-usuarios.vm"/>
-        <resource type="velocity" name="input-parameters"
-                  location="templates/postfunctions/arq-asignacion-otros-usuarios-input.vm"/>
-        <resource type="velocity" name="edit-parameters"
-                  location="templates/postfunctions/arq-asignacion-otros-usuarios-input.vm"/>
-    </workflow-function>
-    <workflow-function key="cec-asignacion-especialista" name="CEC Asignacion Especialista"
-                       i18n-name-key="cec-asignacion-especialista.name"
-                       class="com.dc.jira.jira.workflow.CECAsignacionEspecialistaFactory">
-        <description key="cec-asignacion-especialista.description">Plugin CEC Asignacion Especialista</description>
-        <function-class>com.dc.jira.jira.workflow.CECAsignacionEspecialista</function-class>
-        <orderable>true</orderable>
-        <unique>true</unique>
-        <deletable>true</deletable>
-        <resource type="velocity" name="view" location="templates/postfunctions/cec-asignacion-especialista.vm"/>
-        <resource type="velocity" name="input-parameters"
-                  location="templates/postfunctions/cec-asignacion-especialista-input.vm"/>
-        <resource type="velocity" name="edit-parameters"
-                  location="templates/postfunctions/cec-asignacion-especialista-input.vm"/>
-    </workflow-function>
-    <workflow-function key="cec-cambio-nivel-seguridad" name="CEC Cambio Nivel Seguridad"
-                       i18n-name-key="cec-cambio-nivel-seguridad.name"
-                       class="com.dc.jira.jira.workflow.CECCambioNivelSeguridadFactory">
-        <description key="cec-cambio-nivel-seguridad.description">Plugin CEC Cambio Nivel Seguridad</description>
-        <function-class>com.dc.jira.jira.workflow.CECCambioNivelSeguridad</function-class>
-        <orderable>true</orderable>
-        <unique>true</unique>
-        <deletable>true</deletable>
-        <resource type="velocity" name="view" location="templates/postfunctions/cec-cambio-nivel-seguridad.vm"/>
-        <resource type="velocity" name="input-parameters"
-                  location="templates/postfunctions/cec-cambio-nivel-seguridad-input.vm"/>
-        <resource type="velocity" name="edit-parameters"
-                  location="templates/postfunctions/cec-cambio-nivel-seguridad-input.vm"/>
-    </workflow-function>
-    <workflow-function key="cec-completar-datos-phoenix" name="CEC Completar Datos Phoenix"
-                       i18n-name-key="cec-completar-datos-phoenix.name"
-                       class="com.dc.jira.jira.workflow.CECCompletarDatosPhoenixFactory">
-        <description key="cec-completar-datos-phoenix.description">Plugin CEC Completar Datos Phoenix</description>
-        <function-class>com.dc.jira.jira.workflow.CECCompletarDatosPhoenix</function-class>
-        <orderable>true</orderable>
-        <unique>true</unique>
-        <deletable>true</deletable>
-        <resource type="velocity" name="view" location="templates/postfunctions/cec-completar-datos-phoenix.vm"/>
-        <resource type="velocity" name="input-parameters"
-                  location="templates/postfunctions/cec-completar-datos-phoenix-input.vm"/>
-        <resource type="velocity" name="edit-parameters"
-                  location="templates/postfunctions/cec-completar-datos-phoenix-input.vm"/>
-    </workflow-function>
+  <plugin-info>
+    <description>${project.description}</description>
+    <version>${project.version}</version>
+    <vendor name="${project.organization.name}" url="${project.organization.url}"/>
+    <param name="plugin-icon">images/WK min.png</param>
+    <param name="plugin-logo">images/WK max.png</param>
+  </plugin-info>
+  <!-- add our i18n resource -->
+  <resource type="i18n" name="i18n" location="JiraPluginsDev"/>
+  <!-- add our web resources -->
+  <web-resource key="JiraPluginsDev-resources" name="JiraPluginsDev Web Resources">
+    <dependency>com.atlassian.auiplugin:ajs</dependency>
+    <resource type="download" name="JiraPluginsDev.css" location="/css/JiraPluginsDev.css"/>
+    <resource type="download" name="JiraPluginsDev.js" location="/js/JiraPluginsDev.js"/>
+    <resource type="download" name="images/" location="/images"/>
+    <context>JiraPluginsDev</context>
+  </web-resource>
+  <!-- EDITOR DE EVENTOS -->
+  <component-import key="EditorEventos" interface="com.atlassian.event.api.EventPublisher"/>
+  <component key="Listener" class="com.dc.jira.ProcesarEdicion">
+    <description>Clase que perrmite controlar los eventos de JIRA.</description>
+  </component>
+  <workflow-function key="arq-asignacion-otros-usuarios" name="ARQ Asignacion Otros Usuarios" i18n-name-key="arq-asignacion-otros-usuarios.name" class="com.dc.jira.jira.workflow.ARQAsignacionOtrosUsuariosFactory">
+    <description key="arq-asignacion-otros-usuarios.description">The ARQ Asignacion Otros Usuarios Plugin</description>
+    <function-class>com.dc.jira.jira.workflow.ARQAsignacionOtrosUsuarios</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/arq-asignacion-otros-usuarios.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/arq-asignacion-otros-usuarios-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/arq-asignacion-otros-usuarios-input.vm"/>
+  </workflow-function>
+  <workflow-function key="cec-asignacion-especialista" name="CEC Asignacion Especialista" i18n-name-key="cec-asignacion-especialista.name" class="com.dc.jira.jira.workflow.CECAsignacionEspecialistaFactory">
+    <description key="cec-asignacion-especialista.description">Plugin CEC Asignacion Especialista</description>
+    <function-class>com.dc.jira.jira.workflow.CECAsignacionEspecialista</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/cec-asignacion-especialista.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/cec-asignacion-especialista-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/cec-asignacion-especialista-input.vm"/>
+  </workflow-function>
+  <workflow-function key="cec-cambio-nivel-seguridad" name="CEC Cambio Nivel Seguridad" i18n-name-key="cec-cambio-nivel-seguridad.name" class="com.dc.jira.jira.workflow.CECCambioNivelSeguridadFactory">
+    <description key="cec-cambio-nivel-seguridad.description">Plugin CEC Cambio Nivel Seguridad</description>
+    <function-class>com.dc.jira.jira.workflow.CECCambioNivelSeguridad</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/cec-cambio-nivel-seguridad.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/cec-cambio-nivel-seguridad-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/cec-cambio-nivel-seguridad-input.vm"/>
+  </workflow-function>
+  <workflow-function key="cec-completar-datos-phoenix" name="CEC Completar Datos Phoenix" i18n-name-key="cec-completar-datos-phoenix.name" class="com.dc.jira.jira.workflow.CECCompletarDatosPhoenixFactory">
+    <description key="cec-completar-datos-phoenix.description">Plugin CEC Completar Datos Phoenix</description>
+    <function-class>com.dc.jira.jira.workflow.CECCompletarDatosPhoenix</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/cec-completar-datos-phoenix.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/cec-completar-datos-phoenix-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/cec-completar-datos-phoenix-input.vm"/>
+  </workflow-function>
+  <workflow-function key="cec-exportar-consultas" name="CEC Exportar Consultas" i18n-name-key="cec-exportar-consultas.name" class="com.dc.jira.jira.workflow.CECExportarConsultasFactory">
+    <description key="cec-exportar-consultas.description">The CEC Exportar Consultas Plugin</description>
+    <function-class>com.dc.jira.jira.workflow.CECExportarConsultas</function-class>
+    <orderable>true</orderable>
+    <unique>true</unique>
+    <deletable>true</deletable>
+    <resource type="velocity" name="view" location="templates/postfunctions/cec-exportar-consultas.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/postfunctions/cec-exportar-consultas-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/postfunctions/cec-exportar-consultas-input.vm"/>
+  </workflow-function>
 </atlassian-plugin>
