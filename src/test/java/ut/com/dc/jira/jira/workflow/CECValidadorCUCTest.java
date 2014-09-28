@@ -1,5 +1,12 @@
 package ut.com.dc.jira.jira.workflow;
 
+import org.junit.Test;
+import org.junit.After;
+import org.junit.Before;
+import org.mockito.Mockito;
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.*;
+
 import com.atlassian.jira.bc.project.component.ProjectComponentManager;
 import com.atlassian.jira.config.ConstantsManager;
 import com.atlassian.jira.config.SubTaskManager;
@@ -14,65 +21,51 @@ import com.atlassian.jira.project.ProjectManager;
 import com.atlassian.jira.project.version.VersionManager;
 import com.atlassian.jira.user.util.UserManager;
 import org.ofbiz.core.entity.GenericValue;
-
-import org.junit.Test;
-import org.junit.Before;
-
-import static org.junit.Assert.*;
-import static org.mockito.Mockito.*;
-
-import java.util.Map;
+import com.opensymphony.workflow.InvalidInputException;
 import java.util.HashMap;
-import java.util.Collections;
+import java.util.Map;
+
+import com.dc.jira.jira.workflow.CECValidadorCUC;
 
 public class CECValidadorCUCTest
 {
-    public static final String MESSAGE = "my message";
+    public static final String FIELD_WORD="word";
 
-    protected CECValidadorCUC function;
+    protected CECValidadorCUC validator;
     protected MutableIssue issue;
 
     @Before
     public void setup() {
 
         issue = createPartialMockedIssue();
-        issue.setDescription("");
 
-        function = new CECValidadorCUC() {
-            protected MutableIssue getIssue(Map transientVars) throws DataAccessException {
-                return issue;
-            }
-        };
+        validator = new CECValidadorCUC();
     }
 
     @Test
-    public void testNullMessage() throws Exception
-    {
-        Map transientVars = Collections.emptyMap();
-
-        function.execute(transientVars,null,null);
-
-        assertEquals("message should be empty","",issue.getDescription());
-    }
-
-    @Test
-    public void testEmptyMessage() throws Exception
+    public void testValidates() throws Exception
     {
         Map transientVars = new HashMap();
-        transientVars.put("messageField","");
-        function.execute(transientVars,null,null);
+        transientVars.put(FIELD_WORD,"test");
+        transientVars.put("issue",issue);
+        issue.setDescription("This description has test in it.");
 
-        assertEquals("message should be empty","",issue.getDescription());
+        validator.validate(transientVars,null,null);
+
+        assertTrue("validator should pass",true);
     }
 
-    @Test
-    public void testValidMessage() throws Exception
+    @Test(expected=InvalidInputException.class)
+    public void testFailsValidation() throws Exception
     {
         Map transientVars = new HashMap();
-        transientVars.put("messageField",MESSAGE);
-        function.execute(transientVars,null,null);
+        transientVars.put(FIELD_WORD,"test");
+        transientVars.put("issue",issue);
+        issue.setDescription("This description does not have the magic word in it.");
 
-        assertEquals("message not found",MESSAGE,issue.getDescription());
+        validator.validate(transientVars,null,null);
+
+        assertTrue("validator should not pass",true);
     }
 
     private MutableIssue createPartialMockedIssue() {

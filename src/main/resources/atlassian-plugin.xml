@@ -72,5 +72,12 @@
     <resource type="velocity" name="view" location="templates/postfunctions/cec-exportar-consultas.vm"/>
     <resource type="velocity" name="input-parameters" location="templates/postfunctions/cec-exportar-consultas-input.vm"/>
     <resource type="velocity" name="edit-parameters" location="templates/postfunctions/cec-exportar-consultas-input.vm"/>
-
+  </workflow-function>
+  <workflow-validator key="cec-validador-cuc" name="CEC Validador CUC" i18n-name-key="cec-validador-cuc.name" class="com.dc.jira.jira.workflow.CECValidadorCUCFactory">
+    <description key="cec-validador-cuc.description">The CEC Validador CUC Plugin</description>
+    <validator-class>com.dc.jira.jira.workflow.CECValidadorCUC</validator-class>
+    <resource type="velocity" name="view" location="templates/validators/cec-validador-cuc.vm"/>
+    <resource type="velocity" name="input-parameters" location="templates/validators/cec-validador-cuc-input.vm"/>
+    <resource type="velocity" name="edit-parameters" location="templates/validators/cec-validador-cuc-input.vm"/>
+  </workflow-validator>
 </atlassian-plugin>
