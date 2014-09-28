@@ -16,17 +16,14 @@ import com.atlassian.jira.user.util.UserManager;
 import org.ofbiz.core.entity.GenericValue;
 
 import org.junit.Test;
-import org.junit.After;
 import org.junit.Before;
-import org.mockito.Mockito;
+
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Collections;
-
-import com.dc.jira.jira.workflow.CECValidadorCUC;
 
 public class CECValidadorCUCTest
 {
