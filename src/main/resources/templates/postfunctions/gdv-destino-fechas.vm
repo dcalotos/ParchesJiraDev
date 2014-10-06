@@ -1,1 +1,5 @@
-Logs the message '$messageField'
+<i><b>Wolters Kluwer.</b></i><br/>
+Establecimiento de usuario administrador con permisos de edicion sobre GDV para poder realizar la operacion de edicion.<br/>
+Concatena los datos de destino con las fechas de ida y llegada en el campo destino.<br/>
+
+&nbsp;&nbsp;-&nbsp;Usuario administrador seleccionado: &nbsp;&nbsp;<b>$userAdmin</b>
